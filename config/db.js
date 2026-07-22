@@ -1,10 +1,11 @@
+require("dotenv").config();
 const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
-  host: "three-tier-db.c30g6ou4aze1.ap-southeast-2.rds.amazonaws.com",
-  user: "admin",
-  password: "nayabfatima123",
-  database: "contactsdb"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 connection.connect((err) => {

@@ -113,32 +113,20 @@ npm install
 
 ### Configuration
 
-⚠️ **The current `config/db.js` has database credentials hardcoded directly in the file.** For any real deployment (and before pushing to a public repo), switch to environment variables instead:
+This project uses environment variables to keep database credentials out of the codebase.
 
 1. Install `dotenv`:
-   ```bash
+```bash
    npm install dotenv
-   ```
+```
 2. Create a `.env` file in the project root (already ignored by `.gitignore`):
-   ```env
+```env
    DB_HOST=your-rds-endpoint.rds.amazonaws.com
    DB_USER=admin
    DB_PASSWORD=your-secure-password
    DB_NAME=contactsdb
-   ```
-3. Update `config/db.js` to read from `process.env`:
-   ```js
-   require("dotenv").config();
-   const mysql = require("mysql2");
-
-   const connection = mysql.createConnection({
-     host: process.env.DB_HOST,
-     user: process.env.DB_USER,
-     password: process.env.DB_PASSWORD,
-     database: process.env.DB_NAME,
-   });
-   ```
-4. **Rotate the RDS password** if it has ever been committed to version control — treat any previously exposed credential as compromised.
+```
+3. `config/db.js` reads these values via `process.env` — no credentials are hardcoded in the source.
 
 ### Running Locally
 
