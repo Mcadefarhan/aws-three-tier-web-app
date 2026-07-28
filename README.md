@@ -214,3 +214,4 @@ CREATE TABLE IF NOT EXISTS contacts (
 ## 📄 License
 
 This project is available for personal and educational use. Add a license file (e.g., MIT) if you plan to distribute or open-source it.
+THANK YOU
