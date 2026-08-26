@@ -148,7 +148,7 @@ Saves a new contact form submission.
 ```json
 {
   "name": "John doe",
-  "email": "boom@gmail.com",
+  "email": "John231@gmail.com",
   "message": "Hello, I'd like to get in touch."
 }
 ```
